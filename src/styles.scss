@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+@import '~bootstrap/scss/bootstrap.scss';
+
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
+@import '~@fullcalendar/timegrid/main.css';
+@import '~@fullcalendar/list/main.css';
+@import '~@fullcalendar/bootstrap/main.css';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// body {
+//     background: url('https://drscdn.500px.org/photo/196588939/q%3D80_m%3D2000/v2?sig=8c0ede450e323f0edf5e785ee147a399d0cf0e4931a155f52772ae0a8cf5dabc');
+// }
+
+>>> .cdk-overlay-container {
+    z-index: 100;
+}

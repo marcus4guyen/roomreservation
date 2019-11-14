@@ -1,0 +1,48 @@
+<div class="dialog-container">
+    <h1 mat-dialog-title>Book the room</h1>
+    <form [formGroup]="eventForm" mat-dialog-content>
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="w-100">
+                    <input formControlName="purpose" matInput placeholder="Purpose">
+                </mat-form-field>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-4">
+                <mat-form-field class="w-100">
+                    <input formControlName="date" matInput placeholder="Date">
+                </mat-form-field>
+            </div>
+            <div class="col-4">
+                <mat-form-field class="w-100">
+                    <mat-label>From</mat-label>
+                    <mat-select formControlName="start">
+                        <mat-option>None</mat-option>
+                        <mat-option *ngFor="let timeInterval of startTimesInterval" [value]="timeInterval">{{ timeInterval }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="col-4">
+                <mat-form-field class="w-100">
+                    <mat-label>To</mat-label>
+                    <mat-select formControlName="end">
+                        <mat-option>None</mat-option>
+                        <mat-option *ngFor="let timeInterval of endTimesInterval" [value]="timeInterval">{{ timeInterval }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 text-right button-container">
+                <button mat-flat-button color="primary" *ngIf="mode === EVENT_MODE.NEW" (click)="onBookClicked()">Book</button>
+
+                <button mat-flat-button color="warn" *ngIf="mode === EVENT_MODE.UPDATE" (click)="onDeleteClicked()">Cancel</button>
+                <button mat-flat-button color="primary" *ngIf="mode === EVENT_MODE.UPDATE" (click)="onBookClicked()">Update</button>
+            </div>
+        </div>
+    </form>
+</div>
